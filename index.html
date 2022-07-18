@@ -3,200 +3,566 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
 
 </head>
 <body>
-<nav style="background-color: aqua" class="navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="#">Home</a>
-    <a id="register" class="navbar-brand" href="form-login/register.html">Register</a>
-    <a onclick="logOut()" class="navbar-brand">Log Out</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
+<div style="background-image: url('https://img3.thuthuatphanmem.vn/uploads/2019/09/30/background-nuoc-bien_111422663.jpg')">
+    <nav style="background-color:skyblue" class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="#">STARDAT.VN</a>
+        <a id="register" class="navbar-brand" href="form-login/register.html">ĐĂNG KÝ</a>
+        <a id="login" class="navbar-brand" href="form-login/register.html"></a>
+        <a onclick="logOut()" class="navbar-brand">ĐĂNG XUẤT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-<div class="container" align="center">
-    <div class="row">
-        <div class="col-12">
-            <h1 style="background: peru">Welcome to website star Đạt</h1>
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">TRANG CHỦ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        DỊCH VỤ
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Facebook</a>
+                        <a class="dropdown-item" href="#">Instagram</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Youtube</a>
+                        <a class="dropdown-item" href="#">Tiktok</a>
+                    </div>
+            </ul>
+            <input style="width: 200px" class="form-control mr-sm-2" type="createService" placeholder="createService" aria-label="Search" id="newService" type="text">
+            <button style="width: 120px" class="btn btn-outline-success my-2 my-sm-0" type="submit"  onclick="createService()">createService</button>
+            <form class="form-inline my-2 my-lg-0">
+                <input style="width: 180px" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search" oninput="actionSearch()">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="actionSearch()">Search</button>
+            </form>
         </div>
+    </nav>
 
-    </div>
+    <div class="container" align="center">
+        <div class="row">
+            <div class="col-12">
+                <table border="1" style="width: 100%;text-align: center" >
+                    <tr>
+                        <th>STT</th>
+                        <th>SERVICE</th>
+                        <th>EDIT</th>
+                        <TH>DELETE</TH>
+                    </tr>
+                    <tbody id="drawTable">
 
-</div>
-
-<!--footer-->
-<!-- Footer -->
-<footer class="text-center text-lg-start " style="background-color: aqua">
-    <!-- Section: Social media -->
-    <section
-            class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-    >
-        <!-- Left -->
-        <div class="me-5 d-none d-lg-block">
-            <span>Get connected with us on social networks:</span>
-        </div>
-        <!-- Left -->
-
-        <!-- Right -->
-        <div>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-
-    <!-- Section: Links  -->
-    <section class="">
-        <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <!-- Content -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fas fa-gem me-3"></i>Company name
-                    </h6>
-                    <p>
-                        Here you can use rows and columns to organize your footer content. Lorem ipsum
-                        dolor sit amet, consectetur adipisicing elit.
-                    </p>
+                    </tbody>
+                </table>
+                <span id="validate"></span>
+                <p class="lead text-black opacity-1000">STARDAT.VN chuyên cung cấp các dịch vụ,<br> giải pháp và tiện ích kinh doanh giúp gia tăng doanh số,<br> mở rộng nhận diện thương hiệu và tầm ảnh hưởng trên các kênh truyền thông và mạng xã hội!</p>
+                <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-11 text-center text-xl-left">
+                    <a class="btn btn-outline-dark border-2x rounded-pill btn-lg mt-4 fs-0 py-2" href="/login.html">Bắt
+                        Đầu Ngay với STARDAT.VN <i class="bi bi-check-square-fill"></i> <span class="fas fa-play ml-2"
+                                                                                              data-fa-transform="shrink-6 down-1"></span></a>
                 </div>
-                <!-- Grid column -->
+                <section class="bg-light text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h1 class="fs-2 fs-sm-4 fs-md-5">Danh Sách Dịch Vụ STARDAT</h1>
+                                <p class="lead">Chúng tôi luôn cung cấp những dịch vụ tốt nhất tới khách hàng</p><br><br>
+                            </div>
+                        </div>
+                        <div class="row mt-6">
+                            <div class="col-lg-4">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="fas fa-robot fs-5 text-primary"></span>
+                                    </div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">BOT TƯƠNG TÁC</h5>
+                                        <p>Bot Tương Tác là dịch vụ tự động chúc mừng sinh nhật bạn bè,
+                                            tự động thả cảm xúc và bình luận bài viết mới nhất của bạn bè, group, page
+                                            hoặc tuỳ chọn theo listuid,
+                                            có thể lựa chọn sticker và nhiều hình ảnh,
+                                            đây là công cụ kéo tương tác hiệu quả nhất trong thời điểm hiện tại</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="far fa-thumbs-up fs-5 text-success"></span>
+                                    </div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">TĂNG LIKE BÀI VIẾT</h5>
+                                        <p>Tăng like bài viết là dịch vụ tăng like cho các bài viết, hình ảnh, album,
+                                            video Facebook của khách hàng tuỳ chọn 1 cách tự động và an toàn, lượt like
+                                            sẽ nhảy lên tự nhiên như người dùng thật bấm like. Hệ thống sử dụng tài
+                                            khoản việt đang hoạt động để tăng like</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="far fa-comment fs-5 text-danger"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">TĂNG BÌNH LUẬN</h5>
+                                        <p>Tăng bình luận là dịch vụ tăng comment cho các bài viết, hình ảnh, album,
+                                            video Facebook của khách hàng tuỳ chọn 1 cách tự động và an toàn. Tăng bình
+                                            luận sẽ xây dựng nền tảng thương hiệu cho bạn, tạo sự tin tưởng và đạt được
+                                            mục tiêu của mình</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-6">
+                            <div class="col-lg-4">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="far fa-thumbs-up fs-5 text-info"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">TĂNG LIKE FANPAGE</h5>
+                                        <p>Dịch vụ tăng like Fanpage trên facebook là dịch vụ tăng lượt thích trang cho
+                                            các tổ chức, cá nhân, ca sĩ, nhạc sĩ… Tăng like fanpage là hình thức tăng
+                                            lượt thích, lượt theo dõi cho fanpage của khách hàng có nhu cầu cần có lượng
+                                            like nhiều hơn để phục vụ mục đích cá nhân</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="fas fa-rss fs-5 text-danger"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">TĂNG NGƯỜI THEO DÕI</h5>
+                                        <p>Tăng theo dõi là dịch vụ tăng lượt follow theo yêu cầu của khách hàng.Giúp
+                                            tăng lượt tương tác, người tiếp cận bài viết và đẩy tên bạn lên top từ khóa
+                                            tìm kiếm,có được số lượng theo dõi cá nhân lớn sẽ giúp bạn có được lượng
+                                            khách hàng hoặc lượng người hâm hộ ổn định</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="fas fa-eye fs-5 text-primary"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">TĂNG MẮT LIVESTREAM</h5>
+                                        <p>Là dịch vụ tăng mắt ảo cho livestream một cách tự nhiên nhất, sẽ giúp cho
+                                            người xem cảm thấy livestream hấp dẫn hơn và người live cũng sẽ thấy tự tin
+                                            hơn rất nhiều khi phát live.Đây là cách giúp bạn bán hàng hiệu quả mà hàng
+                                            ngàn streamer,shop... đang áp dụng</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-6">
+                            <div class="col-lg-4">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="fas fa-video fs-5 text-danger"></i></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">TĂNG LƯỢT XEM VIDEO</h5>
+                                        <p>Tăng lượt xem Video là dịch vụ tăng view video Facebook để tăng độ uy tín và
+                                            giúp bạn tiếp cận được khách hàng dễ hơn. Số lần hiển thị video tạo hiệu ứng
+                                            đám đông khi nhiều người xem, video của bạn sẽ nổi bật hơn và sẽ có thể được
+                                            lọt vào video thịnh hành</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="fas fa-users fs-5 text-primary"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">TĂNG THÀNH VIÊN NHÓM</h5>
+                                        <p>Tăng thành viên nhóm là dịch vụ tăng lượt member theo yêu cầu của khách
+                                            hàng.Giúp tăng lượt tương tác, người tiếp cận và đẩy nhóm lên top từ khóa
+                                            tìm kiếm,có được số lượng thành viên lớn sẽ giúp bạn đẩy mạnh tương tác và
+                                            tăng người dùng tham gia nhóm</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="far fa-share-square fs-5 text-warning"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">TĂNG LƯỢT CHIA SẺ</h5>
+                                        <p>Tăng chia sẻ là dịch vụ tăng lượt chia sẻ lên tường cá nhân hoặc lên hội nhóm
+                                            có nhiều thành viên.Giúp tăng lượt tương tác, người tiếp cận bài viết hoặc
+                                            livestream giúp bạn có được lượng khách hàng mới và giúp bạn bán hàng hiệu
+                                            quả hơn</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-6">
+                            <div class="col-lg-4">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="far fa-thumbs-up fs-5 text-primary"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">VIP LIKE BÀI VIẾT</h5>
+                                        <p>Vip Like bài viết là dịch vụ sử dụng tài khoản Facebook Việt để tăng like bài
+                                            viết mới nhất của Profile hoặc Fanpage. Hệ thống tự động tăng like vào bài
+                                            viết mới nhất của bạn (đăng bài là có like) giúp tăng độ uy tín, thu hút
+                                            lượt tiếp cận và khách hàng </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="far fa-comment fs-5 text-success"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">VIP COMMENT BÀI VIẾT</h5>
+                                        <p>Vip Comment bài viết là dịch vụ sử dụng tài khoản Facebook Việt để tăng
+                                            Comment bài viết mới nhất của Profile hoặc Fanpage. Hệ thống tự động tăng
+                                            Comment vào bài viết mới nhất của bạn (đăng bài là có Cmt) giúp tăng độ uy
+                                            tín, thu hút lượt tiếp cận và khách hàng</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="fas fa-user-minus fs-5 text-info"><i
+                                            class="bi bi-person-x-fill"></i></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">LỌC BẠN BÈ</h5>
+                                        <p>Lọc bạn bè là dịch vụ lọc bạn bè không tương tác trên Facebook cá nhân giúp
+                                            bạn xoá đi những bạn bè ảo, bạn bè đã bỏ Facebook và những người không tương
+                                            tác và quan tâm đến bạn để kết bạn thêm những người bạn mới giúp cải thiện
+                                            tương tác trên Facebook cá nhân</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-6">
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px"
+                                            class="fas fa-shopping-bag fs-5 text-danger"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">SHOPEE</h5>
+                                        <p>Shopee bao gồm các dịch vụ tăng theo dõi, tăng tim, tăng bình luận sử dụng
+                                            tài khoản Shopee Việt đang hoạt động để tăng giúp bạn cải thiện tương tác,
+                                            giúp tăng độ uy tín, thu hút lượt tiếp cận và khách hàng hoặc để phục vụ với
+                                            mục đích cá nhân</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px" class="fab fa-instagram fs-5 text-warning"></span>
+                                    </div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">INSTAGRAM</h5>
+                                        <p>Instagram bao gồm các dịch vụ tăng theo dõi, tăng tim, tăng bình luận sử dụng
+                                            tài khoản Instagram Việt đang hoạt động để tăng giúp bạn cải thiện tương
+                                            tác, giúp tăng độ uy tín, thu hút lượt tiếp cận và khách hàng hoặc để phục
+                                            vụ với mục đích cá nhân</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                <div class="card card-span h-100">
+                                    <div class="card-span-img"><span
+                                            style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px"
+                                            class="fab fa-tiktok fs-5 text-black"></span></div>
+                                    <div class="card-body pt-6 pb-4"><br>
+                                        <h5 class="mb-2">TIKTOK</h5>
+                                        <p>Tiktok bao gồm các dịch vụ tăng theo dõi, tăng tim, tăng bình luận, tăng view
+                                            sử dụng tài khoản Tiktok Việt đang hoạt động để tăng giúp bạn cải thiện
+                                            tương tác, giúp tăng độ uy tín, thu hút lượt tiếp cận và khách hàng hoặc để
+                                            phục vụ với mục đích cá nhân</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Products
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Angular</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">React</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Vue</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Laravel</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
+                </section>
 
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Useful links
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Pricing</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Settings</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Orders</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Help</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
 
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Contact
-                    </h6>
-                    <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                    <p>
-                        <i class="fas fa-envelope me-3"></i>
-                        info@example.com
-                    </p>
-                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                </div>
-                <!-- Grid column -->
             </div>
-            <!-- Grid row -->
-        </div>
-    </section>
-    <!-- Section: Links  -->
 
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+
     </div>
-    <!-- Copyright -->
-</footer>
- Footer
+
+    <!--footer-->
+    <!-- Footer -->
+    <footer class="text-center text-lg-start " style="background-color: skyblue">
+        <!-- Section: Social media -->
+        <section
+                class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+        >
+            <!-- Left -->
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>STARDAT.VN
+                        </h6>
+                        <p>
+                            STARDAT.VN đã có 7 năm hoạt động trong lĩnh vực Online Maketing,
+                            nắm bắt được sự thay đổi và định hứng được sự phát triển của thị trường,
+                            STARDAT.VN đi đầu trong lĩnh vực online maketing, cung cấp đa dạng các dịch vụ,
+                            giúp người dùng luôn tiếp cận được với mức giá phải chăng và hiệu quả maketing tối ưu nhất.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            COMPANY
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">About</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Contact</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Careers</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Imprint</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            PRODUCT
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Nạp Xu Tiktok</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Nạp Xu Tiktok</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Nạp Xu Tiktok</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Địa Chỉ
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> Phố mới, Kênh Giang, Thủy Nguyên,Hải Phòng</p>
+                        <p><i class="fas fa-phone me-3"></i>Hotline: 0329.799.568</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <!-- Copyright -->
+    </footer>
+</div>
+Footer
 <script>
+    class Service {
+        id;
+        name;
+        constructor(id,name){
+            this.id=id;
+            this.name=name;
+
+        }
+        getId(){
+            return this.id;
+        }
+        setId(value) {
+            this.id = value;
+        }
+        getName(){
+            return this.name;
+        }
+        setName(value){
+            this.name=value;
+        }
+    }
     let username = window.localStorage.getItem('USERNAME_KEY');
     if (username!= null ){
         document.getElementById('register').innerHTML=''
         document.getElementById('login').innerHTML=username;
+
     }
+    let listService = [];
+    let service1 = new Service(1,'auto like')
+    let service2 = new Service(2, 'auto comment')
+    let service3 = new Service(3, 'auto share')
+    let service4 = new Service(4, 'tăng mắt livestream')
+    listService.push(service1,service2,service3,service4);
+    let listSearch = [];
+
+    function showListService() {
+        // console.log('push',listService)
+        let drawTable = '';
+        let class_tr = '';
+        let style_bt = '';
+
+        if (username == null) {
+            document.getElementById('edit').style.display = 'none';
+            document.getElementById('delete').style.display = 'none';
+            style_bt= "display:none"
+        }
+        for (let i = 0; i < listService.length; i++) {
+            if (i % 2 === 0) {
+                class_tr = "table-primary"
+            } else {
+                class_tr = "table-warning"
+            }
+            drawTable += `<tr class="${class_tr}">
+                    <td>${listService[i].id}</td>
+                    <td>${listService[i].name}</td>
+                    <td  style="${style_bt}"><button onclick="updateService()" class="btn btn-primary" style="border-radius: 50%"  data-toggle="modal" data-target="#exampleModalEdit" data-whatever="${listService[i]}"><i class="bi bi-pencil"></i></button></td>
+                    <td style="${style_bt}"><button onclick="deleteService()" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger" style="border-radius: 50%" ><i class="bi bi-x-square-fill"></i></button></td>
+
+                    </tr>`
+        }
+        document.getElementById('drawTable').innerHTML = drawTable;
+    }
+    function updateService(id) {
+        let editService= prompt('name to update service',new Service(listService[id],))
+        console.log('editService======',editService)
+        if (editService.trim()===''){
+            document.getElementById('validate').innerHTML='<span style="color: red">không được để trống</span>'
+        }
+        else {
+            listService[id]=editService;
+            document.getElementById('validate').innerHTML='<span style="color: #6af460">edit success</span>'
+            showListService();
+        }
+    }
+    function deleteService(id) {
+        console.log('id======', id)
+        listService.splice(id,1)
+    }
+showListService();
+    function createService() {
+
+        let newService = document.getElementById('newService').value
+
+        if (newService.trim()===''){
+            document.getElementById('validate').innerHTML='<span style="color: red">không được để trống</span>'
+        }else {
+                listService.push(new Service(listService.length +1, newService));
+            document.getElementById('validate').innerHTML='<span style="color: greenyellow">create success</span>'
+        }
+        showListService();
+    }
+
+
+    // function showListSearch() {
+    //     let drawTable = '';
+    //     let class_tr = '';
+
+        // if (username == null) {
+        //     document.getElementById('edit').style.display = 'none';
+        //     document.getElementById('delete').style.display = 'none';
+        //     style_bt= "display:none"
+        // }
+    //     for (let i = 0; i < listSearch.length; i++) {
+    //         if (i % 2 === 0) {
+    //             class_tr = "table-primary"
+    //         } else {
+    //             class_tr = "table-warning"
+    //         }
+    //         drawTable += `<tr class="${class_tr}">
+    //                 <td>${listSearch[i].id}</td>
+    //                 <td>${listSearch[i].name}</td>
+    //                 <td><button onclick="updateService(${i})">edit</button>
+    //                 <td><button onclick="deleteService(${i})">delete</button></td>
+    //
+    //                 </tr>`
+    //     }
+    //     document.getElementById('drawTable').innerHTML = drawTable;
+    // }
+    // showListService();
+    // function actionSearch() {
+    //     let search = document.getElementById('search').value
+    //     let listSearch = [];
+    //     console.log('search=====',search)
+    //     if (search.trim()===''){
+    //         showListService();
+    //         return;
+    //     }
+    //     for (let i = 0; i < listService.length; i++) {
+    //         if (search===listService[i]){
+    //             listSearch.push(listService[i])
+    //         }
+    //         }
+    //         console.log('listSearch',listSearch)
+    //     showListSearch();
+    // }
+    // function home() {
+    //     if (username!=null){
+    //         window.location.href='/home.html'
+    //     }else {
+    //         window.location.href='/home.html'
+    //     }
+    // }
+
+    showListService()
     function logOut() {
         window.localStorage.clear();
         window.location.reload();
     }
-
+    
 </script>
 
 </body>
