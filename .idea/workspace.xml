@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ded296c-36a8-49d4-a3f8-3571532425ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/form-login/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/form-login/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/form-login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/form-login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form-login/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/form-login/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +35,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -62,7 +59,9 @@
       <workItem from="1658033577011" duration="2267000" />
       <workItem from="1658049767162" duration="7902000" />
       <workItem from="1658071476109" duration="7507000" />
-      <workItem from="1658106538056" duration="3323000" />
+      <workItem from="1658106538056" duration="9187000" />
+      <workItem from="1658116665470" duration="1017000" />
+      <workItem from="1658142746409" duration="25535000" />
     </task>
     <servers />
   </component>
@@ -79,5 +78,23 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/index.html</url>
+          <line>476</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/index.html</url>
+          <line>466</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

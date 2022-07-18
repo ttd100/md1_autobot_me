@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">TRANG CHỦ</a>
+                    <a onclick="home()" class="nav-link" href="#">TRANG CHỦ</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -55,7 +55,7 @@
             <button style="width: 120px" class="btn btn-outline-success my-2 my-sm-0" type="submit"  onclick="createService()">createService</button>
             <form class="form-inline my-2 my-lg-0">
                 <input style="width: 180px" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search" oninput="actionSearch()">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="actionSearch()">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" oninput="actionSearch()" ><i class="bi bi-search"></i></button>
             </form>
         </div>
     </nav>
@@ -249,7 +249,7 @@
                             <div class="col-lg-4 mt-6 mt-lg-0">
                                 <div class="card card-span h-100">
                                     <div class="card-span-img"><span style=" top:-35px;left:140px;position: absolute; background-color: white ; font-size: 40px; border-radius: 50%; padding: 10px"
-                                            class="fas fa-shopping-bag fs-5 text-danger"></span></div>
+                                                                     class="fas fa-shopping-bag fs-5 text-danger"></span></div>
                                     <div class="card-body pt-6 pb-4"><br>
                                         <h5 class="mb-2">SHOPEE</h5>
                                         <p>Shopee bao gồm các dịch vụ tăng theo dõi, tăng tim, tăng bình luận sử dụng
@@ -446,7 +446,12 @@ Footer
     let service2 = new Service(2, 'auto comment')
     let service3 = new Service(3, 'auto share')
     let service4 = new Service(4, 'tăng mắt livestream')
-    listService.push(service1,service2,service3,service4);
+    let service5 = new Service(5,'tăng folow cá nhân')
+    let service6 = new Service(6, 'tăng menber group')
+    let service7 = new Service(7, 'tăng view story')
+    let service8 = new Service(8, 'mở khóa facebook')
+
+    listService.push(service1,service2,service3,service4,service5,service6,service7,service8);
     let listSearch = [];
 
     function showListService() {
@@ -469,30 +474,63 @@ Footer
             drawTable += `<tr class="${class_tr}">
                     <td>${listService[i].id}</td>
                     <td>${listService[i].name}</td>
-                    <td  style="${style_bt}"><button onclick="updateService()" class="btn btn-primary" style="border-radius: 50%"  data-toggle="modal" data-target="#exampleModalEdit" data-whatever="${listService[i]}"><i class="bi bi-pencil"></i></button></td>
-                    <td style="${style_bt}"><button onclick="deleteService()" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger" style="border-radius: 50%" ><i class="bi bi-x-square-fill"></i></button></td>
-
-                    </tr>`
+                    <td  style="${style_bt}"><button class="btn btn-primary" style="border-radius: 50%"  data-toggle="modal" data-target="#exampleModalEdit" data-whatever="${listService[i].name}"><i class="bi bi-pencil"></i></button></td>
+                    <td style="${style_bt}"><button data-toggle="modal" class="btn btn-danger" style="border-radius: 50%" onclick="deleteService(${listService[i].id})"  ><i class="bi bi-x-square-fill"></i></button></td>
+                    </tr>
+                    <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Service</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Edit Service</label>
+            <input type="text" class="form-control" id="editService">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="updateService(${i})" data-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+`
         }
         document.getElementById('drawTable').innerHTML = drawTable;
     }
     function updateService(id) {
-        let editService= prompt('name to update service',new Service(listService[id],))
+        let editService= document.getElementById('editService').value
+        // let editService= prompt('name to update service',listService[id])
         console.log('editService======',editService)
         if (editService.trim()===''){
             document.getElementById('validate').innerHTML='<span style="color: red">không được để trống</span>'
         }
         else {
-            listService[id]=editService;
-            document.getElementById('validate').innerHTML='<span style="color: #6af460">edit success</span>'
+            listService[id].name=editService;
+            console.log('list id=====',listService[id])
+            document.getElementById('validate').innerHTML='<span style="color: #60f494">edit success</span>'
             showListService();
         }
     }
     function deleteService(id) {
-        console.log('id======', id)
-        listService.splice(id,1)
+        console.log('id=====',id)
+        for (let i = 0; i < listService.length; i++) {
+            console.log('li=====',listService[i].id==id)
+            if (listService[i].id==id) {
+                listService.splice(listService[i],1)
+                break;
+            }
+        }
+        showListService();
     }
-showListService();
+
     function createService() {
 
         let newService = document.getElementById('newService').value
@@ -500,69 +538,128 @@ showListService();
         if (newService.trim()===''){
             document.getElementById('validate').innerHTML='<span style="color: red">không được để trống</span>'
         }else {
-                listService.push(new Service(listService.length +1, newService));
+            listService.push(new Service(listService.length +1, newService));
             document.getElementById('validate').innerHTML='<span style="color: greenyellow">create success</span>'
         }
         showListService();
     }
 
 
-    // function showListSearch() {
-    //     let drawTable = '';
-    //     let class_tr = '';
+    function showListSearch() {
+        let drawTable = '';
+        let class_tr = '';
+        let style_bt = '';
 
-        // if (username == null) {
-        //     document.getElementById('edit').style.display = 'none';
-        //     document.getElementById('delete').style.display = 'none';
-        //     style_bt= "display:none"
-        // }
-    //     for (let i = 0; i < listSearch.length; i++) {
-    //         if (i % 2 === 0) {
-    //             class_tr = "table-primary"
-    //         } else {
-    //             class_tr = "table-warning"
-    //         }
-    //         drawTable += `<tr class="${class_tr}">
-    //                 <td>${listSearch[i].id}</td>
-    //                 <td>${listSearch[i].name}</td>
-    //                 <td><button onclick="updateService(${i})">edit</button>
-    //                 <td><button onclick="deleteService(${i})">delete</button></td>
-    //
-    //                 </tr>`
-    //     }
-    //     document.getElementById('drawTable').innerHTML = drawTable;
-    // }
-    // showListService();
-    // function actionSearch() {
-    //     let search = document.getElementById('search').value
-    //     let listSearch = [];
-    //     console.log('search=====',search)
-    //     if (search.trim()===''){
-    //         showListService();
-    //         return;
-    //     }
-    //     for (let i = 0; i < listService.length; i++) {
-    //         if (search===listService[i]){
-    //             listSearch.push(listService[i])
-    //         }
-    //         }
-    //         console.log('listSearch',listSearch)
-    //     showListSearch();
-    // }
-    // function home() {
-    //     if (username!=null){
-    //         window.location.href='/home.html'
-    //     }else {
-    //         window.location.href='/home.html'
-    //     }
-    // }
+        if (username == null) {
+            document.getElementById('edit').style.display = 'none';
+            document.getElementById('delete').style.display = 'none';
+            style_bt= "display:none"
+        }
+        for (let i = 0; i < listSearch.length; i++) {
+            if (i % 2 === 0) {
+                class_tr = "table-primary"
+            } else {
+                class_tr = "table-warning"
+            }
+            drawTable += `<tr class="${class_tr}">
+                    <td>${listSearch[i].id}</td>
+                    <td>${listSearch[i].name}</td>
+                    <td  style="${style_bt}"><button  class="btn btn-primary" style="border-radius: 50%"  data-toggle="modal" data-target="#exampleModalEdit" data-whatever="${listService[i].name}"><i class="bi bi-pencil"></i></button></td>
+                    <td style="${style_bt}"><button data-toggle="modal" data-target="#exampleModal" class="btn btn-danger" style="border-radius: 50%" ><i class="bi bi-x-square-fill"></i></button></td>
+                    </tr>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure delete?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" onclick="deleteService(${i})" data-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Service</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Edit Service</label>
+            <input type="text" class="form-control" id="editService">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="updateService(${i})" data-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>`
+        }
+        document.getElementById('drawTable').innerHTML = drawTable;
+    }
+    function actionSearch() {
+        let search = document.getElementById('search').value
+        listSearch=[];
+        console.log('value s=====',search)
+        if (search.trim()===''){
+            showListService();
+            return;
+        }
+        for (let i = 0; i < listService.length; i++) {
+            if (search.toLowerCase()===listService[i].name.toLowerCase().slice(0,search.length)){
+                listSearch.push(listService[i])
+            }
+        }
+        showListSearch();
+    }
+    function home() {
+        if (username!=null){
+            window.location.href='/home.html'
+        }
+    }
 
     showListService()
     function logOut() {
         window.localStorage.clear();
         window.location.reload();
     }
-    
+    $('#exampleModalEdit').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New message to ' + recipient)
+        modal.find('.modal-body input').val(recipient)
+    })
+    $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New message to ' + recipient)
+        modal.find('.modal-body input').val(recipient)
+    })
+
 </script>
 
 </body>
