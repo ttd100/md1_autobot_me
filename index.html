@@ -75,9 +75,9 @@
                     </tbody>
                 </table>
                 <span id="validate"></span>
-                <p class="lead text-black opacity-1000">STARDAT.VN chuyên cung cấp các dịch vụ,<br> giải pháp và tiện ích kinh doanh giúp gia tăng doanh số,<br> mở rộng nhận diện thương hiệu và tầm ảnh hưởng trên các kênh truyền thông và mạng xã hội!</p>
+                <p class="lead text-black opacity-1000" >STARDAT.VN chuyên cung cấp các dịch vụ,<br> giải pháp và tiện ích kinh doanh giúp gia tăng doanh số,<br> mở rộng nhận diện thương hiệu và tầm ảnh hưởng trên các kênh truyền thông và mạng xã hội!</p>
                 <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-11 text-center text-xl-left">
-                    <a class="btn btn-outline-dark border-2x rounded-pill btn-lg mt-4 fs-0 py-2" href="/login.html">Bắt
+                    <a class="btn btn-outline-dark border-2x rounded-pill btn-lg mt-4 fs-0 py-2" type="button" onclick="reloadPage()">Bắt
                         Đầu Ngay với STARDAT.VN <i class="bi bi-check-square-fill"></i> <span class="fas fa-play ml-2"
                                                                                               data-fa-transform="shrink-6 down-1"></span></a>
                 </div>
@@ -629,6 +629,9 @@ Footer
             }
         }
         showListSearch();
+    }
+    function reloadPage(){
+        location.reload(true);
     }
     function home() {
         if (username!=null){
