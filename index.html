@@ -474,51 +474,24 @@ Footer
             drawTable += `<tr class="${class_tr}">
                     <td>${listService[i].id}</td>
                     <td>${listService[i].name}</td>
-                    <td  style="${style_bt}"><button class="btn btn-primary" style="border-radius: 50%"  data-toggle="modal" data-target="#exampleModalEdit" data-whatever="${listService[i].name}"><i class="bi bi-pencil"></i></button></td>
+                    <td  style="${style_bt}"><button class="btn btn-primary" style="border-radius: 50%"   onclick="updateService(${listService[i].id})"><i class="bi bi-pencil"></i></button></td>
                     <td style="${style_bt}"><button data-toggle="modal" class="btn btn-danger" style="border-radius: 50%" onclick="deleteService(${listService[i].id})"  ><i class="bi bi-x-square-fill"></i></button></td>
                     </tr>
-                    <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Service</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Edit Service</label>
-            <input type="text" class="form-control" id="editService">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="updateService(${i})" data-dismiss="modal">Yes</button>
-      </div>
-    </div>
-  </div>
-</div>
 `
         }
         document.getElementById('drawTable').innerHTML = drawTable;
     }
     function updateService(id) {
-        let editService= document.getElementById('editService').value
-        // let editService= prompt('name to update service',listService[id])
-        console.log('editService======',editService)
-        if (editService.trim()===''){
-            document.getElementById('validate').innerHTML='<span style="color: red">không được để trống</span>'
+        for (let i = 0; i < listService.length; i++) {
+            if (listService[i].id==id){
+                let editService= prompt('editService: ',listService[i].name)
+                listService[i].setName(editService)
+            }
         }
-        else {
-            listService[id].name=editService;
-            console.log('list id=====',listService[id])
-            document.getElementById('validate').innerHTML='<span style="color: #60f494">edit success</span>'
-            showListService();
-        }
+        showListService();
     }
+
+    
     function deleteService(id) {
         console.log('id=====',id)
         for (let i = 0; i < listService.length; i++) {
